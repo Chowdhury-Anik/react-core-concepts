@@ -12,9 +12,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1>My React App</h1>
-      <p>First time react practice!</p>
+      <h1>A Dedicated Learning Platform</h1>
+      <h3>Learn from home and Lead the digital world</h3>
         <Product product= {products[0]}></Product>
+        <Product product= {products[1]}></Product>
+        <Product product= {products[2]}></Product>
+        <Product product= {products[3]}></Product>
 
         <Person name="Jhankhar Mahabub" job="Web Developer"></Person>
         <FooterArea></FooterArea>
@@ -29,8 +32,9 @@ function Product(props){
     borderRadius: '5px',
     margin:'10px',
     backgroundColor:'gray',
-    height: '450px',
+    height: '500px',
     width: '400px',
+    float:'left'
 
 
   }
