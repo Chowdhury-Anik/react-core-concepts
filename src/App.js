@@ -52,11 +52,16 @@ function Users(){
   .then(res => res.json())
   .then(data=> setUsers(data));
 
-  })
+  },[])
 
   return(
     <div>
-      <h3>Dynamic:{users.length}</h3>
+      <h3>Dynamic Users Number: {users.length}</h3>
+      <ul>
+        {
+        users.map(user => <li>{user.email}</li>)
+      }
+      </ul>
     </div>
   );
 }
