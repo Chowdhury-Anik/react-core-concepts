@@ -5,16 +5,20 @@ import './App.css';
 function App() {
   const students = ['Anik', 'Rakib','Fardin','Nepal','Anup'];
   const products=[
-    {name: 'Web Development', price:'$200', duration: '3 month'},
+    {name:'Web Development', price:'$200', duration: '3 month'},
     {name:'Digital Marketing', price: '$300',duration:'1 month'},
-    {name: 'Blogging Course', price:'$100', duration:'2 month'},
-    {name: 'Python Programming', price:'$300', duration: '6 month'}
+    {name:'Blogging Course', price:'$100', duration:'2 month'},
+    {name:'Python Programming', price:'$300', duration: '6 month'}
   ];
+
   return (
     <div className="App">
       <header className="App-header">
-      <h1>A Dedicated Learning Platform</h1>
-      <h3>Learn from home and Lead the digital world</h3>
+        <h1>A Dedicated Learning Platform</h1>
+        <h3>Learn from home and Lead the digital world</h3>
+        {
+          products.map(product => <Product product={product}></Product>)
+        }
         <Product product= {products[0]}></Product>
         <Product product= {products[1]}></Product>
         <Product product= {products[2]}></Product>
@@ -22,11 +26,16 @@ function App() {
        
         <Person name="Jhankhar Mahabub" job="Web Developer"></Person>
         
-        <h3>List of ours success students</h3>
+        <h3>Building a list </h3>
         <ul>
           {
             students.map(student => <li>{student}</li>)
           }
+
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+
 
         </ul>
         <FooterArea></FooterArea>
