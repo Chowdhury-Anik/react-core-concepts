@@ -40,11 +40,14 @@ function Product(props){
     borderRadius: '5px',
   
   }
+  // destructing product 
+
+  const {name, price} = props.product;
   return(
     <div style={ProductStyle}>
-    <h2>{props.product.name}</h2>
+    <h2>{name}</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque iusto hic natus rem repudiandae id?</p>
-    <h1>{props.product.price}</h1>
+    <h1>{price}</h1>
     <button style={ButtonStyle}>Buy Now </button>
     </div>
   );
