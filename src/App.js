@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,13 +20,11 @@ function App() {
         {
           products.map(product => <Product product={product}></Product>)
         }
-        <Product product= {products[0]}></Product>
-        <Product product= {products[1]}></Product>
-        <Product product= {products[2]}></Product>
-        <Product product= {products[3]}></Product>
-       
+      
         <Person name="Jhankhar Mahabub" job="Web Developer"></Person>
         
+        <Counter></Counter>
+
         <h3>Building a list </h3>
         <ul>
           {
@@ -43,6 +42,23 @@ function App() {
     </div>
   );
 }
+// counter function 
+function Counter(){
+  const [count, setCount]= useState(10);
+  const handleIncrease = () =>{
+    const newCount= count + 1;
+    setCount(newCount);
+  };
+
+  return(
+    <div>
+      <h1>Count: {count} </h1> 
+      <button onClick ={handleIncrease}>Increase</button>
+    </div>
+  )
+}
+
+
 //products function
 function Product(props){
   const ProductStyle={
