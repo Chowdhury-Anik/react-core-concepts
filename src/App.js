@@ -3,6 +3,7 @@ import './App.css';
 
 
 function App() {
+  const students = ['Anik', 'Rakib','Fardin','Nepal','Anup'];
   const products=[
     {name: 'Web Development', price:'$200', duration: '3 month'},
     {name:'Digital Marketing', price: '$300',duration:'1 month'},
@@ -18,8 +19,17 @@ function App() {
         <Product product= {products[1]}></Product>
         <Product product= {products[2]}></Product>
         <Product product= {products[3]}></Product>
-
+       
         <Person name="Jhankhar Mahabub" job="Web Developer"></Person>
+        
+        <h3>List of ours success students</h3>
+        <ul>
+          <li>{students[0]}</li>
+          <li>{students[1]}</li>
+          <li>{students[2]}</li>
+          <li>{students[3]}</li>
+          <li>{students[4]}</li>
+        </ul>
         <FooterArea></FooterArea>
       </header>
     </div>
@@ -48,12 +58,12 @@ function Product(props){
 
   const {name, price} = props.product;
   return(
-    <div style={ProductStyle}>
-    <h2>{name}</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque iusto hic natus rem repudiandae id?</p>
-    <h1>{price}</h1>
-    <button style={ButtonStyle}>Buy Now </button>
-    </div>
+      <div style={ProductStyle}>
+        <h2>{name}</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque iusto hic natus rem repudiandae id?</p>
+        <h1>{price}</h1>
+        <button style={ButtonStyle}>Buy Now </button>
+      </div>
   );
 
   
@@ -63,7 +73,7 @@ function Product(props){
      // you can apply style by declaring a variable
      const PersonStyle={
        border:'2px solid gold',
-       margin: '30px',
+       marginTop: '50px',
        width: '800px',
        backgroundColor:'white',
        padding: '10px',
