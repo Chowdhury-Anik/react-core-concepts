@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -24,6 +24,7 @@ function App() {
         <Person name="Jhankhar Mahabub" job="Web Developer"></Person>
         
         <Counter></Counter>
+        <Users></Users>
 
         <h3>Building a list </h3>
         <ul>
@@ -42,6 +43,25 @@ function App() {
     </div>
   );
 }
+
+//User data load using API
+function Users(){
+  const [users, setUsers]= useState([]);
+  useEffect(() =>{
+   fetch('https://jsonplaceholder.typicode.com/users')
+  .then(res => res.json())
+  .then(data=> setUsers(data));
+
+  })
+
+  return(
+    <div>
+      <h3>Dynamic:{users.length}</h3>
+    </div>
+  );
+}
+
+
 // counter function 
 function Counter(){
   const [count, setCount]= useState(10);
