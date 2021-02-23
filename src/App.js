@@ -24,11 +24,10 @@ function App() {
         
         <h3>List of ours success students</h3>
         <ul>
-          <li>{students[0]}</li>
-          <li>{students[1]}</li>
-          <li>{students[2]}</li>
-          <li>{students[3]}</li>
-          <li>{students[4]}</li>
+          {
+            students.map(student => <li>{student}</li>)
+          }
+
         </ul>
         <FooterArea></FooterArea>
       </header>
